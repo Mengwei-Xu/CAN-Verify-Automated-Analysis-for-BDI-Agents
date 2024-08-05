@@ -1,0 +1,14 @@
+// Initial belief bases
+1. at_home, car_available
+2. at_home, car_not_available, no_bus_strike
+3. at_home, car_not_available, bus_strike
+// External events
+travelling
+// Plan library
+travelling : at_home & car_available <- drive_to_work.
+travelling : at_home & car_not_available & no_bus_strike <- bus_to_work.
+travelling : at_home & car_not_available & bus_strike <- walk_to_work.
+// Actions description
+drive_to_work : at_home & car_available <- <{at_home}, {at_work}>
+bus_to_work : at_home & car_not_available & no_bus_strike <- <{at_home}, {at_work}>
+walk_to_work : at_home & car_not_available & bus_strike <- <{at_home}, {at_work}>
