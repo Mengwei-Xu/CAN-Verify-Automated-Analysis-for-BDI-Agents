@@ -157,8 +157,9 @@ For the example in listing 1.4, please run the command
 ```./CAN-Verify -dynamic -p paper_examples/Listing_1-4.txt paper_examples/Listing_1-4.can```
 
 
-#### Expected Outputs
+#### Expected Outputs 
 
+##### Listing_1-3.can
 For the example in listing 1.3, you should get the following
 
 > Model checking: A [ F ("no_failure"&(X "empty_intention")) ] ... Result: false
@@ -169,8 +170,10 @@ This means that it is not always the case the task of sensing is achieved eventu
 
 This means that there indeed exists a case that the task of sensing is failed eventually.
 
-These two outputs are important as they confirm that there is a possibility that a bad interleaving may cause some troubles. 
+##### Explanation of Expected Outputs for Listing_1-3.can
 
+These two outputs are important as they confirm that there is a possibility that a bad interleaving may cause some troubles. 
+##### Listing_1-3-Corrected.can
 If you run the exmaple in **Listing_1-3-Corrected.can**, you should get the following
 
 > Model checking: A [ F ("no_failure"&(X "empty_intention")) ] ... Result: True
@@ -181,21 +184,20 @@ This means that it is always the case the task of sensing is achieved eventually
 
 This means that there never exists the case the task of sensing is failed eventually.
 
-For the exmaple in **Listing_1-4.can**, you should get the following
-
-> Model checking: A [ F ("predicate_F1_clean") ] ... Result: true
-
-This means that it is always the case that the predicate of F1_clean holds eventually.
+##### Explanation of Expected Outputs for Listing_1-3.can
+These two outputs are important as they confirm that the task of sensing is always eventually achieved. 
 
 
+##### Listing_1.can
 If you run the exmaple in **Listing_1.can**, you should get the following
 
 > Model checking: A [ F ("predicate_at_work") ] ... Result: true
 
 This means that it is always the case that the predicate of at_work holds eventually.
 
-This example is designed correctly to have a full coverage of the plans to ensure the agent can always travel to the work successfully.
-The output of the result above simply confirms our correct design. 
+##### Explanation of Expected Outputs for Listing_1.can
+
+This example in Listing_1.can is designed to be correct to have a full coverage of the plans to ensure the agent can always travel to the work successfully. The output of the result above simply confirms our correct design, which is precisely the goal of such this automated tool. 
 
 
 ## Source Code Overview
